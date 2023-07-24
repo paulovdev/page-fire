@@ -1,4 +1,5 @@
 import './Add.css'
+
 const Add = () => {
 
     return (
@@ -22,4 +23,4 @@ const Add = () => {
     )
 }
 
-export default Add
+export default Add;

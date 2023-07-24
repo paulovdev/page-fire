@@ -1,18 +1,18 @@
 import { BrowserRouter } from 'react-router-dom';
-import RouterApp from '../RouterApp';
-import SideBar from './componentes/SideBar/SideBar'
+import { AuthGoogleProvider } from './context/authGoogle'
+import RouterApp from './routes/RouterApp';
+import SideBar from './componentes/SideBar/SideBar';
 
 const App = () => {
 
   return (
     <BrowserRouter>
-      {/*       <Login /> */}
-
-      <SideBar />
-      <RouterApp />
-
+      <AuthGoogleProvider>
+        <SideBar />
+        <RouterApp />
+      </AuthGoogleProvider>
     </BrowserRouter>
-  )
-}
+  );
+};
 
-export default App
+export default App;
