@@ -9,11 +9,12 @@ import {
 } from 'firebase/firestore';
 import { useContext } from 'react';
 import { AuthGoogleContext } from '../../context/authGoogle';
+import { AiFillDelete } from 'react-icons/ai'
 
 const MyPc = () => {
     const [users, setUsers] = useState([]);
     const { user } = useContext(AuthGoogleContext);
-    let userLogado = JSON.parse(user);
+    const userLogado = JSON.parse(user);
 
     useEffect(() => {
         const getUsers = async () => {
@@ -41,7 +42,9 @@ const MyPc = () => {
                                 <li><h1>{user.peca}</h1></li>
                                 <li><p>R$ {user.preco}</p></li>
                             </div>
-                            <button onClick={() => excluirPeca(user.id)}>Excluir peça</button>
+                            <div className="choice-buttons">
+                                <button style={{ background: '#E62636' }} onClick={() => excluirPeca(user.id)}><AiFillDelete size={25} /></button>
+                            </div>
                         </div>
                     ))}
                 </div>

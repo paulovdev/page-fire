@@ -11,7 +11,7 @@ import { BiSolidLogOut } from 'react-icons/bi'
 
 
 const navigation = [
-    { title: 'Inicio', href: '/', icon: AiFillHome },
+    { title: 'Inicio', href: '/home', icon: AiFillHome },
     { title: 'Pecas', href: '/mypc', icon: RiComputerFill },
     { title: 'Adicionar', href: '/add', icon: HiDocumentAdd }
 ];
@@ -22,28 +22,30 @@ const SideBar = () => {
 
     const defaultPhotoURL = 'default-photo-url.jpg';
 
+    const photoURL = userLogado?.photoURL || defaultPhotoURL;
+
     return (
         <div className='sidebar'>
             <div className="sidebar-items">
                 <div className="profile">
+
                     <img
-                        src={userLogado?.photoURL || defaultPhotoURL}
+                        src={photoURL}
                         width={39}
                         alt={userLogado?.displayName}
                     />
+
                     <p>Olá, <span>{userLogado?.displayName}</span></p>
                 </div>
                 {navigation.map((item) => (
                     <Link to={item.href} key={item.title} className="sidebar-item">
-                        <button><item.icon size={30} color='#777' /></button>
-                        {item.title}
+                        <button><item.icon size={24} /></button>
+                        <p>{item.title}</p>
                     </Link>
                 ))}
                 <div className="sidebar-item" onClick={signOut}>
-                    <button>
-                        < BiSolidLogOut size={30} color='#777' />
-                    </button>
-                    Sair
+                    <button>< BiSolidLogOut size={24} /></button>
+                    <p> Sair</p>
                 </div>
             </div>
         </div >
@@ -51,5 +53,4 @@ const SideBar = () => {
 }
 
 export default SideBar;
-
 

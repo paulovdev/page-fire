@@ -47,18 +47,20 @@ const Add = () => {
                 <div className='form'>
                     {successMessage && <p>{successMessage}</p>}
                     <div className="input-wrapper">
+                        <label htmlFor="">Peça</label>
                         <input
                             type="text"
-                            placeholder="nome da peça"
+                            placeholder="Nome da peça"
                             value={peca}
                             required
                             onChange={(e) => setPeca(e.target.value)}
                         />
                     </div>
                     <div className="input-wrapper">
+                        <label htmlFor="">Preço</label>
                         <input
                             type="number"
-                            placeholder="preço da peça"
+                            placeholder="Preço da peça"
                             value={preco}
                             required
                             onChange={(e) => setPreco(e.target.value)}
@@ -66,15 +68,16 @@ const Add = () => {
                     </div>
 
                     <div className="input-wrapper">
+                        <label htmlFor="">Imagem</label>
                         <input
                             type="url"
-                            placeholder="url da imagem da peça"
+                            placeholder="URL da imagem da peça"
                             value={url}
                             required
                             onChange={(e) => setUrl(e.target.value)}
                         />
                     </div>
-                    <button onClick={criarDado}>Criar dado</button>
+                    <button onClick={criarDado}>Registrar peça</button>
                 </div>
             </div>
         </div>

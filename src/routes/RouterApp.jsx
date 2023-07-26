@@ -4,9 +4,7 @@ import Login from '../pages/Login/Login'
 import Home from '../pages/Home/Home';
 import Add from '../pages/Add/Add';
 import MyPc from '../pages/MyPc/MyPc';
-
-import PrivateRoutes from './Private'
-
+import Private from './Private'
 
 function RouterApp() {
     return (
@@ -14,14 +12,11 @@ function RouterApp() {
             <Routes>
                 <Route path="/" element={<Login />} />
 
-                <Route path="/Home" element={<PrivateRoutes />}>
-                    <Route path="/Home" element={<Home />} />
-                </Route>
-                <Route path="/mypc" element={<PrivateRoutes />}>
-                    <Route path="/mypc" element={<MyPc />} />
-                </Route>
+                <Route  element={<Private />}>
+                    <Route path="/home" element={<Home />} />
 
-                <Route path="/add" element={<PrivateRoutes />}>
+                    <Route path="/mypc" element={<MyPc />} />
+
                     <Route path="/add" element={<Add />} />
                 </Route>
             </Routes>

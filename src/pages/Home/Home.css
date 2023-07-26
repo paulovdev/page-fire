@@ -2,23 +2,29 @@
     width: 100%;
     padding: 100px;
     transition: 0.3s ease-in-out;
-    background-color: #2d2e33;
+    background-color: var(--background);
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 #home h1 {
-    font-size: 2rem;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    text-transform: uppercase;
     font-weight: 700;
-    line-height: 200%;
-    margin-bottom: 1rem;
-    color: #fff;
+    color: var(--text-color);
 }
 
 #home p {
-    font-size: 1.2rem;
-    font-weight: 500;
-    color: rgba(206, 206, 206, 0.872);
-    line-height: 200%;
+    margin: 15px 0px 0px;
+    text-transform: none;
+    font-weight: normal;
+    overflow: visible;
+    font-size: 0.875rem;
+    font-family: Brutal, sans-serif;
+    font-weight: 400;
+    line-height: 1.43;
+    letter-spacing: 0.01em;
+    color: var(--text-color-2);
 }
 
 

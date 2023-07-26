@@ -19,7 +19,7 @@ export const AuthGoogleProvider = ({ children }) => {
       }
     };
     loadStorageData();
-  });
+  }, []);
 
   function signInGoogle() {
     signInWithPopup(auth, provider)
