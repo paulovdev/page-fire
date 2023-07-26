@@ -5,15 +5,18 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 #add h1 {
     font-size: 2rem;
     font-weight: 700;
     line-height: 200%;
+    margin-bottom: 1rem;
 }
 
-form {
+.form {
     width: 600px;
     height: auto;
     padding: 2rem;
@@ -25,34 +28,36 @@ form {
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
-form .input-wrapper {
+.form .input-wrapper {
     width: 100%;
     display: flex;
     flex-direction: column;
     margin-bottom: 1rem;
 }
 
-form input {
+.form input {
     width: 100%;
     padding: 0.8rem;
     border: none;
-    border-bottom: 1px solid;
+    border-bottom: 1px solid #ccc;
     outline: none;
+    font-size: 1.2rem;
+    color: #333;
 }
 
-form ::placeholder {
+.form ::placeholder {
     font-weight: 500;
     text-transform: uppercase;
 }
 
-form button {
+.form button {
     width: 100%;
     padding: 0.8rem;
-    background-color: transparent;
-    outline: none;
+    background-color: #000;
+    color: #fff;
     font-size: 1.1rem;
     font-weight: 700;
-    border: 2px solid;
+    border: none;
     cursor: pointer;
 
     &:hover {
@@ -62,11 +67,15 @@ form button {
 }
 
 @media (max-width:768px) {
-    form {
+    .form {
         width: 100%;
     }
 
     #add {
         padding: 30px;
     }
+}
+
+.form input:focus {
+    border-bottom-color: #000;
 }

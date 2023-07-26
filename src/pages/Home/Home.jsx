@@ -5,7 +5,7 @@ import { AuthGoogleContext } from "../../context/authGoogle";
 const Home = () => {
     const { user } = useContext(AuthGoogleContext);
     let userLogado = JSON.parse(user);
-
+    console.log(userLogado.uid)
     return (
         <section id='home'>
             <div className="grid">
