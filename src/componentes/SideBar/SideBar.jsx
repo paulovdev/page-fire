@@ -12,7 +12,7 @@ import { BiSolidLogOut } from 'react-icons/bi'
 
 const navigation = [
     { title: 'Inicio', href: '/', icon: AiFillHome },
-    { title: 'Meus Computadores', href: '/mypc', icon: RiComputerFill },
+    { title: 'Pecas', href: '/mypc', icon: RiComputerFill },
     { title: 'Adicionar', href: '/add', icon: HiDocumentAdd }
 ];
 
