@@ -25,7 +25,7 @@ const SideBar = () => {
                 <div className="profile">
                     <img
                         src={userLogado?.photoURL || defaultPhotoURL}
-                        width={40}
+                        width={39}
                         alt={userLogado?.displayName}
                     />
                     <p>Olá, <span>{userLogado?.displayName}</span></p>
