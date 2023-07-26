@@ -37,8 +37,10 @@ const MyPc = () => {
                     {users.map((user) => (
                         <div key={user.id} className="pcs-card">
                             <li><img src={user.url} alt="" /></li>
-                            <li>{user.peca}</li>
-                            <li>R$ {user.preco}</li>
+                            <div className="texts">
+                                <li><h1>{user.peca}</h1></li>
+                                <li><p>R$ {user.preco}</p></li>
+                            </div>
                             <button onClick={() => excluirPeca(user.id)}>Excluir peça</button>
                         </div>
                     ))}

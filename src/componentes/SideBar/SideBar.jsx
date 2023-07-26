@@ -2,15 +2,18 @@ import './SideBar.css'
 import { Link } from 'react-router-dom'
 import { useContext } from "react";
 import { AuthGoogleContext } from "../../context/authGoogle";
-import { AiOutlineHome } from 'react-icons/ai'
-import { BsGrid } from 'react-icons/bs'
-import { GrFormAdd } from 'react-icons/gr'
-import { HiOutlineLogout } from 'react-icons/hi'
+import { AiFillHome } from 'react-icons/ai'
+import { RiComputerFill } from 'react-icons/ri'
+import { HiDocumentAdd } from 'react-icons/hi'
+import { BiSolidLogOut } from 'react-icons/bi'
+
+
+
 
 const navigation = [
-    { title: 'Inicio', href: '/', icon: AiOutlineHome },
-    { title: 'Meus Computadores', href: '/mypc', icon: BsGrid },
-    { title: 'Adicionar', href: '/add', icon: GrFormAdd }
+    { title: 'Inicio', href: '/', icon: AiFillHome },
+    { title: 'Meus Computadores', href: '/mypc', icon: RiComputerFill },
+    { title: 'Adicionar', href: '/add', icon: HiDocumentAdd }
 ];
 
 const SideBar = () => {
@@ -32,13 +35,13 @@ const SideBar = () => {
                 </div>
                 {navigation.map((item) => (
                     <Link to={item.href} key={item.title} className="sidebar-item">
-                        <button><item.icon size={30} /></button>
+                        <button><item.icon size={30} color='#777' /></button>
                         {item.title}
                     </Link>
                 ))}
                 <div className="sidebar-item" onClick={signOut}>
                     <button>
-                        < HiOutlineLogout size={30} />
+                        < BiSolidLogOut size={30} color='#777' />
                     </button>
                     Sair
                 </div>
@@ -48,3 +51,5 @@ const SideBar = () => {
 }
 
 export default SideBar;
+
+

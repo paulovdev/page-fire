@@ -1,8 +1,9 @@
 #mypc {
     width: 100%;
+    height: auto;
     padding: 100px;
     transition: 0.3s ease-in-out;
-    background-color: #ffffff;
+    background-color: #2d2e33;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
@@ -11,12 +12,13 @@
     font-weight: 700;
     line-height: 200%;
     margin-bottom: 1rem;
+    color: #fff;
 }
 
 #mypc p {
     font-size: 1.2rem;
     font-weight: 500;
-    color: rgb(111, 111, 111);
+    color: rgba(206, 206, 206, 0.872);
     line-height: 200%;
 }
 
@@ -30,35 +32,47 @@
 .pcs-card {
     width: 250px;
     height: 100%;
+    border-radius: 0.5rem;
     padding: 1rem;
-    background-color: #fff;
+    background-color: #555555;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .pcs .pcs-card img {
     width: 200px;
     height: auto;
     border-radius: 5px;
+
 }
 
-#mypc .pcs-card h1 {
-    font-size: 1.4rem;
+#mypc .texts {
+    width: 100%;
+}
+
+#mypc .texts h1 {
+    font-size: 1rem;
+    line-height: 200%;
     margin-bottom: 1rem;
-    line-height: 120%;
+    color: #fff;
 }
 
-#mypc .pcs-card p {
-    font-size: 1.1rem;
-    line-height: 120%;
+#mypc .texts p {
+    font-size: 1.2rem;
+    line-height: 0;
+    margin-bottom: 1rem;
+    color: #fff;
+    font-weight: bold;
 }
 
 #mypc .pcs-card button {
     margin-top: 1rem;
     width: 100%;
     padding: 0.8rem;
+    border-radius: 0.4rem;
     background-color: #000;
     color: #fff;
     font-size: 1.1rem;
@@ -67,7 +81,8 @@
     cursor: pointer;
 
     &:hover {
-        background-color: #000;
+        background-color: #0e0e0e;
+
         color: #fff;
     }
 }
@@ -81,9 +96,4 @@
         width: 100%;
 
     }
-}
-
-.pcs-card:hover {
-    background-color: #f7f7f7;
-    transform: scale(1.02);
 }

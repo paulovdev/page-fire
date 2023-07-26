@@ -2,7 +2,7 @@
     width: 100%;
     padding: 100px;
     transition: 0.3s ease-in-out;
-    background-color: #ffffff;
+    background-color: #2d2e33;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
@@ -11,12 +11,13 @@
     font-weight: 700;
     line-height: 200%;
     margin-bottom: 1rem;
+    color: #fff;
 }
 
 #home p {
     font-size: 1.2rem;
     font-weight: 500;
-    color: rgb(111, 111, 111);
+    color: rgba(206, 206, 206, 0.872);
     line-height: 200%;
 }
 
