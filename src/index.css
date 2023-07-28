@@ -18,7 +18,7 @@ html {
     --bg: #f2f2f2;
     --border: #a1a1a1;
     --text-color: #141414;
-    --text-color-2: #8f8f8f;
+    --text-color-2: #646464;
 
     --color-special: #0074e4;
     --color-special-hover: #006bcf;
@@ -26,7 +26,7 @@ html {
 }
 
 body {
-    background-color: #eee;
+    background-color: var(--background);
 }
 
 .grid {

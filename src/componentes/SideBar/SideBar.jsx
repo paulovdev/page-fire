@@ -2,18 +2,12 @@ import './SideBar.css'
 import { Link } from 'react-router-dom'
 import { useContext } from "react";
 import { AuthGoogleContext } from "../../context/authGoogle";
-import { AiFillHome } from 'react-icons/ai'
-import { RiComputerFill } from 'react-icons/ri'
-import { HiDocumentAdd } from 'react-icons/hi'
-import { BiSolidLogOut } from 'react-icons/bi'
-
-
-
+import Container from 'react-bootstrap/Container';
+import Navbar from 'react-bootstrap/Navbar';
 
 const navigation = [
-    { title: 'Inicio', href: '/home', icon: AiFillHome },
-    { title: 'Pecas', href: '/mypc', icon: RiComputerFill },
-    { title: 'Adicionar', href: '/add', icon: HiDocumentAdd }
+    { title: 'Inicio', href: '/home' },
+    { title: 'Adicionar', href: '/add' }
 ];
 
 const SideBar = () => {
@@ -25,32 +19,35 @@ const SideBar = () => {
     const photoURL = userLogado?.photoURL || defaultPhotoURL;
 
     return (
-        <div className='sidebar'>
-            <div className="sidebar-items">
-                <div className="profile">
-
-                    <img
-                        src={photoURL}
-                        width={39}
-                        alt={userLogado?.displayName}
-                    />
-
-                    <p>Olá, <span>{userLogado?.displayName}</span></p>
-                </div>
-                {navigation.map((item) => (
-                    <Link to={item.href} key={item.title} className="sidebar-item">
-                        <button><item.icon size={24} /></button>
-                        <p>{item.title}</p>
-                    </Link>
-                ))}
-                <div className="sidebar-item" onClick={signOut}>
-                    <button>< BiSolidLogOut size={24} /></button>
-                    <p> Sair</p>
-                </div>
-            </div>
-        </div >
+        <>
+            <Navbar >
+                <Container>
+                    <Navbar.Brand className="d-inline-flex p-2 gap-3">
+                        {navigation.map((item) => (
+                            <Link to={item.href} key={item.title} className="sidebar-item">
+                                <p>{item.title}</p>
+                            </Link>
+                        ))}
+                    </Navbar.Brand>
+                    <Navbar.Toggle />
+                    <Navbar.Collapse className="justify-content-end collapse" id="navbarNavAltMarkup">
+                        <Navbar.Text>
+                            <div className="profile">
+                                <img
+                                    src={photoURL}
+                                    width={39}
+                                    alt={userLogado?.displayName}
+                                />
+                                <div className="sidebar-item" onClick={signOut}>
+                                    <p> Sair</p>
+                                </div>
+                            </div>
+                        </Navbar.Text>
+                    </Navbar.Collapse>
+                </Container>
+            </Navbar>
+        </>
     );
 }
 
 export default SideBar;
-
