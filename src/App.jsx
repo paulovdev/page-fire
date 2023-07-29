@@ -1,18 +1,26 @@
-import { BrowserRouter } from 'react-router-dom';
-import { AuthGoogleProvider } from './context/authGoogle'
-import RouterApp from './routes/RouterApp';
-import SideBar from './componentes/SideBar/SideBar';
+import React from "react"
+import { Routes, Route } from 'react-router-dom'
+import Login from './pages/Login/Login'
+import Register from './pages/Login/Register'
+import Home from './pages/Home/Home'
+import NavBar from './componentes/Nav/NavBar'
+import { AuthContextProvider } from "./context/AuthContext"
+import ProtectedRoute from "./PrivateRoute/PrivateRoute.page"
 
-const App = () => {
-
+function App() {
   return (
-    <BrowserRouter>
-      <AuthGoogleProvider>
-        <SideBar />
-        <RouterApp />
-      </AuthGoogleProvider>
-    </BrowserRouter>
+    <AuthContextProvider>
+      <Routes>
+        <Route path='/home' element={
+          <ProtectedRoute>
+            <NavBar />
+            <Home />
+          </ProtectedRoute>
+        } />
+        <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<Register />} />
+      </Routes>
+    </AuthContextProvider>
   );
-};
-
-export default App;
+}
+export default App

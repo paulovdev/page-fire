@@ -4,34 +4,35 @@ import { UserAuth } from '../../context/AuthContext'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
-const Login = () => {
+const Register = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
-  const { login } = UserAuth()
   const navigate = useNavigate()
+
+  const { CreateUser } = UserAuth()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     setError('')
 
     try {
-      await login(email, password)
-      navigate('/home')
+      await CreateUser(email, password)
+      navigate('/account')
     }
     catch (e) {
       setError(e.message)
     }
   }
 
+
   return (
     <main className='container d-flex flex-column  justify-content-center align-items-center w-25 p-3'
       style={{
         minHeight: '80vh'
       }}>
-
       <Form onSubmit={handleSubmit} className='border border-dark rounded p-4 w-100'>
-        <h1>Entrar</h1>
+        <h1>Criar conta</h1>
         {error && <p>{error}</p>}
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email</Form.Label>
@@ -42,9 +43,6 @@ const Login = () => {
             required
             placeholder="Seu email"
             onChange={(e) => setEmail(e.target.value)} />
-          <Form.Text className="text-muted">
-            Nunca compartilharemos seu e-mail com mais ninguém.
-          </Form.Text>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -58,16 +56,16 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)} />
         </Form.Group>
 
-        <Button variant="primary" type="submit">Entrar
+        <Button variant="primary" type="submit" >Entrar
         </Button>
+
         <Form.Group className="mb-3">
           <Form.Text >
-            Nao tem uma conta? <Link to='/register'>Cadastre-se</Link>
+            Ja tem uma conta? <Link to='/login'>Entre</Link>
           </Form.Text>
         </Form.Group>
       </Form>
     </main >
   );
 };
-
-export default Login;
+export default Register

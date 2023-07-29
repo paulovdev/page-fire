@@ -1,26 +1,20 @@
-import { Route, Routes } from 'react-router-dom';
-import { Fragment } from "react";
-import Login from '../pages/Login/Login'
+import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { AuthProvider } from '../context/AuthProvider';
 import Home from '../pages/Home/Home';
-import Add from '../pages/Add/Add';
-import Private from './Private'
+import Login from '../pages/Login/Login';
+import Signup from '../pages/Login/Signup';
 
-function RouterApp() {
-    return (
-        <Fragment >
-            <Routes>
-                <Route path="/" element={<Login />} />
+const RouterApp = () => {
+  return (
+    
+      <AuthProvider>
+        <Route exact path="/" component={Home} />
+        <Route path="/login" component={Login} />
+        <Route path="/signup" component={Signup} />
+      </AuthProvider>
 
-                <Route element={<Private />}>
-                    <Route path="/home" element={<Home />} />
-
-
-
-                    <Route path="/add" element={<Add />} />
-                </Route>
-            </Routes>
-        </Fragment >
-    );
-}
+  );
+};
 
 export default RouterApp;
