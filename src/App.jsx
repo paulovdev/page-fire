@@ -11,14 +11,15 @@ function App() {
   return (
     <AuthContextProvider>
       <Routes>
+        <Route path='/' element={<Login />} />
+        <Route path='/register' element={<Register />} />
         <Route path='/home' element={
           <ProtectedRoute>
             <NavBar />
             <Home />
           </ProtectedRoute>
         } />
-        <Route path='/login' element={<Login />} />
-        <Route path='/register' element={<Register />} />
+
       </Routes>
     </AuthContextProvider>
   );

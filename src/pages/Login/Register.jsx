@@ -18,7 +18,7 @@ const Register = () => {
 
     try {
       await CreateUser(email, password)
-      navigate('/account')
+      navigate('/')
     }
     catch (e) {
       setError(e.message)
@@ -61,7 +61,7 @@ const Register = () => {
 
         <Form.Group className="mb-3">
           <Form.Text >
-            Ja tem uma conta? <Link to='/login'>Entre</Link>
+            Ja tem uma conta? <Link to='/'>Entre</Link>
           </Form.Text>
         </Form.Group>
       </Form>
