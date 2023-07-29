@@ -25,7 +25,7 @@ const Login = () => {
   }
 
   return (
-    <main className='container d-flex flex-column  justify-content-center align-items-center w-25 p-3'
+    <main className='container d-flex flex-column  justify-content-center align-items-center p-3'
       style={{
         minHeight: '80vh'
       }}>
