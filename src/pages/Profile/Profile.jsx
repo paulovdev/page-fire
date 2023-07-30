@@ -7,7 +7,7 @@ const Profile = () => {
     return (
         <main className='container'>
             <br />
-            <h1>Configuracoes</h1>
+            <h1>Configurações</h1>
             <br />
             <Form.Control
                 type="password"
@@ -25,8 +25,10 @@ const Profile = () => {
                 readOnly
             />
 
+
         </main >
     )
 }
 
 export default Profile
+

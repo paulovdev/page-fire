@@ -42,9 +42,6 @@ const Login = () => {
             required
             placeholder="Seu email"
             onChange={(e) => setEmail(e.target.value)} />
-          <Form.Text className="text-muted">
-            Nunca compartilharemos seu e-mail com mais ninguém.
-          </Form.Text>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">

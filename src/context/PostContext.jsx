@@ -18,8 +18,6 @@ export const PostProvider = ({ children }) => {
         getPosts();
     }, []);
 
-
-
     return (
         <PostContext.Provider
             value={{
