@@ -1,44 +1,44 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+a {
+    color: #fff;
+}
 
 html {
     scroll-behavior: smooth;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    list-style: none;
-    font-family: 'Inter', sans-serif;
-}
-
-:root {
-    --background: #f8f8f8;
-    --bg: #f2f2f2;
-    --border: #a1a1a1;
-    --text-color: #141414;
-    --text-color-2: #646464;
-
-    --color-special: #0074e4;
-    --color-special-hover: #006bcf;
-
-}
-
 body {
-    background-color: var(--background);
+    background-color: #ffffff;
 }
 
-.grid {
-    max-width: 1100px;
-    margin: 0 auto;
+button {
+    background-color: transparent;
+    outline: none;
+    border: none;
 }
 
-@media (max-width:768px) {
-    .grid {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-    }
+
+::selection {
+    background-color: #000;
+    color: #fff;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #111;
+    border-radius: 10px;
 }
